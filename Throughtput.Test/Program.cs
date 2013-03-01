@@ -38,13 +38,9 @@ namespace Throughtput.Test
                 x.Service<IStartable>(s =>
                 {
                     s.SetServiceName("Throughtput.Test");
-                    s.ConstructUsing(name =>
-                        {
-                            container.Resolve<IServiceBus>();
-                            return container.Resolve<IStartable>();
-                        });
+                    s.ConstructUsing(name => container.Resolve<IStartable>());
                     s.WhenStarted(tc => tc.Start());
-                    s.WhenStopped(_ => { });
+                    s.WhenStopped(_ => container.Dispose());
                 });
                 x.RunAsLocalSystem();
 
