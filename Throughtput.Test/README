@@ -1,0 +1,16 @@
+A MassTransit sample to test how message size affects throughtput.
+
+Uses RabbitMQ as the transport and Autofac for Dependency Injection.
+
+Building:
+Open the solution, get the packages, build.
+
+Running:
+Start the same executable twice, once with "consumer" parameter
+ throughtput.test.exe consumer
+and once without.
+
+Use the RabbitMQ managmeent console to see the throughtput.
+
+
+
