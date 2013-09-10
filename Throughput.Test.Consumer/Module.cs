@@ -15,7 +15,13 @@ namespace Throughput.Test.Consumer
         protected override void Load(ContainerBuilder builder)
         {
             builder
-                .Register(c => new Services.Consumer(c.Resolve<IServiceBus>()))
+                .Register(c => new Services.Consumer1(c.Resolve<IServiceBus>()))
+                .AsSelf()
+                .As<IStartable>()
+                .SingleInstance();
+
+            builder
+                .Register(c => new Services.Consumer2(c.Resolve<IServiceBus>()))
                 .AsSelf()
                 .As<IStartable>()
                 .SingleInstance();

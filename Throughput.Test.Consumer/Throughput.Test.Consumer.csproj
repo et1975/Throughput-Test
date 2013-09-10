@@ -86,10 +86,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consumer2.cs" />
     <Compile Include="Module.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Consumer.cs" />
+    <Compile Include="Consumer1.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
