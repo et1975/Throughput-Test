@@ -6,6 +6,16 @@ using System.Threading.Tasks;
 
 namespace Throughput.Test
 {
+    public interface IMessage1
+    {
+        IEnumerable<Guid> Ids { get; set; }
+    }
+
+    public interface IMessage2
+    {
+        IEnumerable<DTO> Data { get; set; }
+    }
+
     public class DTO
     {
         public Guid Id { get; set; }
@@ -19,7 +29,7 @@ namespace Throughput.Test
         public byte[] Bytes { get; set; }
     }
 
-    public class Message
+    public class Message : IMessage1, IMessage2
     {
         public IEnumerable<Guid> Ids { get; set; }
         public IEnumerable<DTO> Data { get; set; }

@@ -10,16 +10,16 @@ using log4net;
 
 namespace Throughput.Test.Services
 {
-    class Consumer : Consumes<Message>.All, Autofac.IStartable
+    class Consumer1 : Consumes<IMessage1>.All, Autofac.IStartable
     {
-        public Consumer(IServiceBus bus)
+        public Consumer1(IServiceBus bus)
         {
         }
 
-        private static ILog _log = LogManager.GetLogger(typeof(Consumer));
+        private static ILog _log = LogManager.GetLogger(typeof(Consumer1));
         static int _count = 0;
 
-        public void Consume(Message message)
+        public void Consume(IMessage1 message)
         {
             Interlocked.Increment(ref _count);
         }
@@ -27,8 +27,8 @@ namespace Throughput.Test.Services
         private Timer _timer;
         public void Start()
         {
-            _log.Info("Starting Consumer");
-            _timer = new Timer(_ => _log.Info("Received: " + _count), null, 30.Seconds(), 30.Seconds());
+            _log.Info("Starting Consumer1");
+            _timer = new Timer(_ => _log.Info("Received 1s: " + _count), null, 30.Seconds(), 30.Seconds());
         }
     }
 }

@@ -88,10 +88,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consumer2.cs" />
     <Compile Include="Module.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Consumer.cs" />
+    <Compile Include="Consumer1.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -100,7 +101,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Throughput.Test.Messages\Throughput.Test.Messages.csproj">
       <Project>{7584dbd7-32b3-4486-91e8-a9242f6c99b9}</Project>
-      <Name>Troughput.Test.Messages</Name>
+      <Name>Throughput.Test.Messages</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
